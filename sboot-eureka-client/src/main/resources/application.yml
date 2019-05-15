@@ -1,0 +1,25 @@
+eureka:
+  client:
+    serviceUrl:
+      defalutZone: http://localhost:8761/eureka/ #EurekaServer服务地址
+  instance:
+    preferIpAddress: true #表示将自己的IP注册到EurekaServer 上，如果不配置或者将其设置为false，则表示将微服务所在系统的hostname注册到EurekaServer上'
+
+mybatis:
+  mapperLocations: classpath:mappings/**/*.xml
+  typeAliasesPackage: com.ytd.sboot.entity
+  configuration:
+    map-underscore-to-camel-case: true
+
+server:
+  port: 8803 #应用端口号
+spring:
+  application:
+    name: eureka-client-8802 #服务名称
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456
+turbine:
+  combineHostPort: true #同一主机上的服务，以不同端口号区分，默认情况下是以host来区分，后面服务监控时是将到

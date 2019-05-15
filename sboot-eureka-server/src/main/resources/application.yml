@@ -1,0 +1,14 @@
+#服务端口
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false #是否将自己注册到EurekaServer，默认为true
+    fetchRegistry: false #表示是否从EurekaServer获取注册信息，默认为true，表示需要从其他server同步信息
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ # 服务开启的url
+spring:
+  application:
+    name: sboot-eureka-server
