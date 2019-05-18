@@ -8,10 +8,10 @@ eureka:
     prefer-ip-address: true
 ribbon:
   eureka:
-    enabled: false
-eureka-client-8802:
-  ribbon:
-    listOfServers: http://localhost:8802,http://localhost:8803
+    enabled: true
+#eureka-client-8802:
+#  ribbon:
+#    listOfServers: http://localhost:8802,http://localhost:8803
 server:
   port: 8763
 spring:
